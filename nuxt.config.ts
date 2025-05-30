@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css', 
-    'boxicons/css/boxicons.min.css'
+    'boxicons/css/boxicons.min.css',
+    'animate.css/animate.min.css'
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -19,5 +20,11 @@ export default defineNuxtConfig({
         }
       ]
     }
-  }
+  },
+  ssr: true,
+  typescript: {
+    strict: true,
+  },
+  modules: ['@formkit/auto-animate/nuxt'],
+
 })
