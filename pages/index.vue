@@ -7,7 +7,7 @@
                 class="w-full object-cover h-[400px] md:h-[500px]">
         </div>
     </div>
-    
+
     <div>
         <!-- Hero Section -->
         <section class="bg-gradient-to-b from-rose-800 to-rose-700 text-white py-16 text-center">
@@ -18,28 +18,9 @@
                 </p>
             </div>
         </section>
-    </div>
 
-    <div>
         <!-- Lançamentos -->
-        <section class="bg-gray-100 py-12">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-2xl font-bold text-center mb-8">Conheça nossos Produtos</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <div v-for="item in lancamentos" :key="item.nome"
-                        class="bg-white rounded shadow-md overflow-hidden">
-                        <img :src="item.img" :alt="item.nome" class="w-full h-40 object-cover">
-                        <div class="p-4 text-center">
-                            <h3 class="font-semibold text-sm text-gray-700">{{ item.nome }}</h3>
-                            <p class="text-xs text-rose-700">{{ item.linha }}</p>
-                            <button
-                                class="mt-2 bg-rose-700 text-white px-4 py-1 text-sm rounded hover:bg-rose-900">Saiba
-                                mais</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <conheca-nosso-produtos :produtos="lancamentos" titulo="Conheça nossos Produtos" />
 
         <!-- Qualidade -->
         <section class="py-16 bg-white">
@@ -108,7 +89,7 @@
         <section class="bg-rose-800 text-white text-center py-20">
             <div class="max-w-4xl mx-auto px-4">
                 <h2 class="text-2xl md:text-3xl font-bold mb-4">Conheça todos os nossos produtos!</h2>
-                <NuxtLink to="/produtos">
+                <NuxtLink to="#">
                     <button class="bg-white text-rose-800 px-6 py-2 rounded hover:bg-gray-100 font-semibold">
                         Ver Catálogo
                     </button>
