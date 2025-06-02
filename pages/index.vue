@@ -20,86 +20,24 @@
         </section>
 
         <!-- Lançamentos -->
-        <conheca-nosso-produtos :produtos="lancamentos" titulo="Conheça nossos Produtos" />
+        <card-nossos-produtos :produtos="lancamentos" titulo="Conheça nossos Produtos" class-section="bg-gray-100" />
 
         <!-- Qualidade -->
-        <section class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h2 class="text-3xl font-bold text-rose-800 mb-4">Qualidade é o nosso alicerce!</h2>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        A GlobalPlastic realiza testes frequentes que atestam a excelência de nossos produtos:
-                        análise dimensional, densidade, comportamento ao calor, pressão hidrostática interna,
-                        resistência ao impacto, junta soldável, esmagamento e outros.
-                    </p>
-                    <button class="mt-4 bg-rose-700 text-white px-6 py-2 text-sm rounded hover:bg-rose-900">
-                        Conheça todos os testes de qualidade
-                    </button>
-                </div>
-                <div class="md:w-1/2 text-center">
-                    <img src="~/assets/laptop_12.jpg" alt="Qualidade GlobalPlastic" class="mx-auto max-h-[300px]">
-                </div>
-            </div>
-        </section>
+        <card-texto-imagem :dados="dados" />
 
         <!-- CTA Cliente e Revendedor -->
-        <section class="bg-rose-800 py-10 text-white">
-            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white text-rose-800 p-6 rounded shadow-md text-center">
-                    <h3 class="font-bold text-lg mb-2">PORTAL DO CLIENTE</h3>
-                    <p class="text-sm">Clique aqui e confira todas as facilidades</p>
-                    <button class="mt-4 bg-rose-800 text-white px-5 py-2 rounded hover:bg-rose-900">Acessar
-                        Portal</button>
-                </div>
-                <div class="bg-yellow-500 text-rose-900 p-6 rounded shadow-md text-center">
-                    <h3 class="font-bold text-lg mb-2">Quer revender produtos GlobalPlastic?</h3>
-                    <p class="text-sm">Clique aqui</p>
-                    <button class="mt-4 bg-rose-800 text-white px-5 py-2 rounded hover:bg-rose-900">Quero
-                        revender</button>
-                </div>
-            </div>
-        </section>
+        <card-cta :dados="cta" />
 
         <!-- Destaques -->
-        <section class="py-16">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-2xl font-bold text-center mb-12">Por que escolher a GlobalPlastic?</h2>
-                <div class="grid md:grid-cols-3 gap-10">
-                    <div class="text-center">
-                        <i class="bx bx-bulb text-rose-800 text-5xl mb-4"></i>
-                        <h4 class="font-semibold text-lg">Inovação Constante</h4>
-                        <p class="text-sm text-gray-600">Estamos sempre criando novas soluções para facilitar sua vida.
-                        </p>
-                    </div>
-                    <div class="text-center">
-                        <i class="bx bx-shield-quarter text-rose-800 text-5xl mb-4"></i>
-                        <h4 class="font-semibold text-lg">Qualidade Garantida</h4>
-                        <p class="text-sm text-gray-600">Produtos duráveis, práticos e com alto padrão de produção.</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="bx bx-heart text-rose-800 text-5xl mb-4"></i>
-                        <h4 class="font-semibold text-lg">Compromisso com Você</h4>
-                        <p class="text-sm text-gray-600">Atendimento focado em garantir sua satisfação total.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <card-destaques class-section="bg-white py-16" />
 
         <!-- Chamada para ação -->
-        <section class="bg-rose-800 text-white text-center py-20">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">Conheça todos os nossos produtos!</h2>
-                <NuxtLink to="#">
-                    <button class="bg-white text-rose-800 px-6 py-2 rounded hover:bg-gray-100 font-semibold">
-                        Ver Catálogo
-                    </button>
-                </NuxtLink>
-            </div>
-        </section>
+        <card-chamada-acao :dados="chamadaAcao" />
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import imgLapTop from '~/assets/laptop_12.jpg';
 const linhas = [
     { nome: 'Linha Predial', icone: '/icones/predial.svg' },
     { nome: 'Linha Infraestrutura', icone: '/icones/infraestrutura.svg' },
@@ -116,4 +54,53 @@ const lancamentos = [
     { nome: 'Caixa de Luz', linha: 'Elétrica', img: '/produtos/Caixa de Luz 4x2 AMA.jpg' },
     { nome: 'Óculos Evolution', linha: 'Predial', img: '/produtos/Oculos Evolution Incolor.jpg' },
 ];
+
+const dados = {
+    titulo: 'Qualidade é o nosso alicerce!',
+    imagem: imgLapTop,
+    descricao: 'A GlobalPlastic realiza testes frequentes que atestam a excelência de nossos produtos: análise dimensional, densidade, comportamento ao calor, pressão hidrostática interna, resistência ao impacto, junta soldável, esmagamento e outros.',
+    link: {
+        to: '#',
+        text: 'Conheça todos os testes de qualidade'
+    }
+}
+
+const cta = [
+    {
+        titulo: "Portal do cliente",
+        descricao: "Clique aqui e confira todas as facilidades",
+        link: {
+            text: "Acessar Portal",
+            url: "/portal-cliente"
+        },
+        classCard: "bg-white text-rose-800 scale-100 hover:scale-105 transition-transform duration-300",
+        classButton: "bg-rose-700 text-white hover:bg-rose-900 cursor-pointer"
+    },
+    {
+        titulo: "Quero revender",
+        descricao: "Clique aqui e saiba como revender nossos produtos",
+        link: {
+            text: "Quero revender",
+            url: "/revenda"
+        },
+        classCard: "bg-orange-200 text-rose-800 scale-100 hover:scale-105 transition-transform duration-300",
+        classButton: "bg-rose-700 text-white hover:bg-rose-900 cursor-pointer"
+    },    
+]
+
+const chamadaAcao = 
+    {
+        titulo: 'Conheça nossos produtos',
+        descricao: 'Explore nossa ampla gama de soluções em plásticos, projetadas para atender às suas necessidades com qualidade e inovação.',
+        link: {
+            text: 'Ver Catálogo',
+            url: '#'
+        },
+        classSection: 'bg-rose-800 text-white text-center py-20',
+        classCard: 'max-w-4xl mx-auto px-4',
+        classTitulo: 'text-2xl md:text-3xl font-bold mb-4',
+        classDescricao: 'text-lg mb-6',
+        classButton: 'bg-white text-rose-800 px-6 py-2 rounded hover:bg-gray-300 font-semibold text-lg transition-colors duration-300 cursor-pointer'
+    }
+;
 </script>
