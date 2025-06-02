@@ -21,25 +21,3 @@
     </footer>
 </template>
 
-<script lang="ts" setup>
-useHead({
-    title: 'GlobalPlastic',
-    meta: [
-        {
-            name: 'description',
-            content: 'Bem-vindo à minha loja online, onde você encontra os melhores produtos com qualidade e preço justo.'
-        },
-        {
-            name: 'keywords',
-            content: 'loja online, produtos, qualidade, preço justo, compras'
-        },
-        {
-            name: 'author',
-            content: 'Daniel S. Ramos'
-        }
-    ],
-    link: [
-        { rel: 'icon', type: 'image/png', href: '/logo_global.svg' }
-    ]
-});
-</script>
