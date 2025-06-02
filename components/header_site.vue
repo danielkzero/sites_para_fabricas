@@ -6,7 +6,7 @@
             <div class="flex items-center py-4 px-4 md:px-0 md:py-0">
                 <NuxtLink to="/" class="flex items-center animate__animated animate__rubberBand" @click="closeMenu">
                     <img src="/logo_global.svg" alt="Logo" class="h-8 pe-2" />
-                    <img src="/globalplastic.svg" alt="Logo" class="h-3 pe-2" />
+                    <img src="/globalplastic.svg" alt="Logo" class="h-4 pe-2" />
                 </NuxtLink>
 
                 <div v-for="item in headerMenu" :key="item.name" class="hidden md:block">
