@@ -101,11 +101,11 @@ function closeCategorias(cat) {
 }
 
 const lancamentos = [
-    { nome: 'Caixa de Gordura', linha: 'Linha Predial', img: '/produtos/caixa de gordura.jpg' },
-    { nome: 'Caixa Sifonada', linha: 'Infraestrutura', img: '/produtos/Caixa Sifonada 150.jpg' },
-    { nome: 'Assento Sanitário', linha: 'Acessórios', img: '/produtos/Assento Sanitario Branco.jpg' },
-    { nome: 'Caixa de Luz', linha: 'Elétrica', img: '/produtos/Caixa de Luz 4x2 AMA.jpg' },
-    { nome: 'Óculos Evolution', linha: 'Predial', img: '/produtos/Oculos Evolution Incolor.jpg' },
+    { nome: 'Caixa de Gordura', img: '/produtos/caixa de gordura.jpg' },
+    { nome: 'Caixa Sifonada', img: '/produtos/Caixa Sifonada 150.jpg' },
+    { nome: 'Assento Sanitário', img: '/produtos/Assento Sanitario Branco.jpg' },
+    { nome: 'Caixa de Luz', img: '/produtos/Caixa de Luz 4x2 AMA.jpg' },
+    { nome: 'Óculos Evolution', img: '/produtos/Oculos Evolution Incolor.jpg' },
 ];
 
 function toggleFormatGrid(format: 'grid' | 'list') {
