@@ -25,6 +25,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
-  modules: ['@formkit/auto-animate/nuxt'],
+  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image'],
 
 })
