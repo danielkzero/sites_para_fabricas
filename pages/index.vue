@@ -24,9 +24,10 @@
             :produtos="lancamentos" 
             titulo="Conheça nossos Produtos" 
             class-section="bg-gray-100 py-12" 
-            class-card="bg-white rounded shadow-md hover:shadow-2xl hover:scale-105 transition-all p-4 overflow-hidden cursor-pointer"
-            class-titulo="font-semibold text-xl text-gray-700 my-auto"
-            class-button="bg-rose-700 text-white px-4 py-1 text-xl rounded hover:bg-rose-900 mt-auto cursor-pointer"
+            class-container="max-w-7xl mx-auto px-4"
+            class-card="bg-white rounded-xl shadow-md hover:shadow-2xl hover:scale-105 transition-all p-4 overflow-hidden cursor-pointer"
+            class-titulo="text-center font-semibold text-xl text-gray-700 my-auto"
+            class-button="w-full bg-rose-700 text-white px-4 py-1 text-xl rounded hover:bg-rose-900 mt-auto cursor-pointer"
             class-grid="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
             button-text="Saiba mais"
             />
