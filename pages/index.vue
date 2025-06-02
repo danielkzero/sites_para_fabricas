@@ -20,7 +20,16 @@
         </section>
 
         <!-- Lançamentos -->
-        <card-nossos-produtos :produtos="lancamentos" titulo="Conheça nossos Produtos" class-section="bg-gray-100" />
+        <card-nossos-produtos 
+            :produtos="lancamentos" 
+            titulo="Conheça nossos Produtos" 
+            class-section="bg-gray-100 py-12" 
+            class-card="bg-white rounded shadow-md hover:shadow-2xl hover:scale-105 transition-all p-4 overflow-hidden cursor-pointer"
+            class-titulo="font-semibold text-xl text-gray-700 my-auto"
+            class-button="bg-rose-700 text-white px-4 py-1 text-xl rounded hover:bg-rose-900 mt-auto cursor-pointer"
+            class-grid="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+            button-text="Saiba mais"
+            />
 
         <!-- Qualidade -->
         <card-texto-imagem :dados="dados" />
