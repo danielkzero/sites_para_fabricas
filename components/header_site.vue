@@ -4,6 +4,9 @@
         <!-- Top bar -->
         <div class="max-w-7xl mx-auto flex items-center justify-between text-xl">
             <div class="flex items-center py-4 px-4 md:px-0 md:py-0">
+
+                <mobile_menu />
+                <!-- Ícone do menu mobile -->
                 <NuxtLink to="/" class="flex items-center animate__animated animate__rubberBand" @click="closeMenu">
                     <img src="/logo_global.svg" alt="Logo" class="h-8 pe-2" />
                     <img src="/globalplastic.svg" alt="Logo" class="h-4 pe-2" />
@@ -19,11 +22,6 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <!-- Busca -->
-            <div class="flex items-center space-x-4">
-                <input type="text" placeholder="Buscar"
-                    class="border rounded px-3 py-1 text-xl focus:outline-none border-gray-300 hidden md:inline-block" />
             </div>
         </div>
         <template v-for="item in headerMenu" :key="item.name">
