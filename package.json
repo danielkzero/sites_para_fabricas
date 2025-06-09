@@ -18,6 +18,7 @@
     "axios": "^1.9.0",
     "boxicons": "^2.1.4",
     "jwt-decode": "^4.0.0",
+    "material-symbols": "^0.31.6",
     "nuxt": "^3.17.4",
     "tailwindcss": "^4.1.7",
     "vue": "^3.5.15",
