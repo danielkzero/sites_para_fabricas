@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css', 
     'boxicons/css/boxicons.min.css',
-    'animate.css/animate.min.css'
+    'animate.css/animate.min.css',
+    'material-symbols'
   ],
   vite: {
     plugins: [tailwindcss()],
