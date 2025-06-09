@@ -1,3 +1,5 @@
+<!-- cabeçalho com as font do google para usar o material symbols -->
+
 <!-- app.vue -->
 <template>
   <NuxtLayout>
