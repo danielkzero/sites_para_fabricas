@@ -1,0 +1,21 @@
+{
+    "name": "Modest CMS",
+    "short_name": "Modest",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#111827",
+    "description": "Painel de administração do Modest CMS",
+    "icons": [
+        {
+            "src": "/logo_global.svg",
+            "type": "image/svg+xml",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/logo_global.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        }
+    ]
+}
