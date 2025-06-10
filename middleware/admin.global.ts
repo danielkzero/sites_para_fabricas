@@ -1,7 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 
 export default defineNuxtRouteMiddleware((to) => {
-  if (!to.path.startsWith("/admin")) return;
+  if (!to.path.startsWith("/admin/dashboard")) return;
   if (to.path === "/admin/login") return;
 
   if (!process.client) return; // Evita erro em SSR
