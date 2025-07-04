@@ -14,14 +14,13 @@
                 </span>
             </div>
             <div class="md:w-1/2 text-center">
-                <img :src="dados.imagem" alt="Qualidade GlobalPlastic" class="mx-auto max-h-[300px]"></img>
+                <img :src="dados.imagem" alt="Qualidade GlobalPlastic" class="mx-auto max-h-[300px]" />
             </div>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
-
 defineProps<{
     dados: {
         titulo: string;
@@ -34,7 +33,4 @@ defineProps<{
         }    
     }
 }>();
-
-
-
 </script>

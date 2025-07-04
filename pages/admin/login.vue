@@ -104,7 +104,8 @@ async function login() {
 
         if (data?.token) {
             localStorage.setItem('modest_token', data.token)
-            router.push('/admin/dashboard')
+            localStorage.setItem('modest_usuario', JSON.stringify(data.usuario));            
+            router.push('/admin/dashboard');
         } else {
             throw new Error('Credenciais inválidas')
         }

@@ -1,11 +1,12 @@
 <template>
-  <div class="grid grid-cols-10 gap-4">
-    <div class="col-span-2">
+  <div class="grid grid-cols-12 gap-4">
+    <div class="hidden md:block md:col-span-4 lg:col-span-2">
       <!-- páginas -->
       <admin-lista-paginas />
     </div>
-    <div class="col-span-8">
+    <div class="col-span-12 md:col-span-8 lg:col-span-10">
       <!-- Nome da página que eu estou criando e opções da página, como salvar e excluir página ou voltar -->
+
       <section class="editor-pagina">
         <section class="editor-pagina-toolbar">
           <div class="flex items-center mb-3">
@@ -88,7 +89,7 @@
 
                 <div class="rounded-xl">
                   <div class="flex items-center gap-3">
-                    <button type="button"
+                    <button type="button" @click="addComponentToBody()"
                       class="p-2 rounded-xl items-center flex text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 focus:outline-none cursor-pointer transition-all scale-100 hover:scale-105">
                       <span class="material-symbols-outlined me-2">widgets</span> Adicionar componente
                     </button>
@@ -146,9 +147,7 @@
 </template>
 
 <script lang="ts" setup>
-import { AdminSeoHtmlAtrrsEditor, AdminSeoMetaDescricaoEditor, AdminSeoMetaLinkEditor, AdminSeoMetaTituloEditor } from '#components';
-
-
+import { AdminDragDropImage, AdminInputText, AdminSeoHtmlAtrrsEditor, AdminSeoMetaDescricaoEditor, AdminSeoMetaLinkEditor, AdminSeoMetaTituloEditor } from '#components';
 
 definePageMeta({
   layout: 'admin',
@@ -167,7 +166,9 @@ const componentMap = {
   'meta-title': AdminSeoMetaTituloEditor,
   'meta-link': AdminSeoMetaLinkEditor,
   'meta-description': AdminSeoMetaDescricaoEditor,
-  'html-attrs': AdminSeoHtmlAtrrsEditor
+  'html-attrs': AdminSeoHtmlAtrrsEditor,
+  'input-text': AdminInputText,
+  'drag-drop-image': AdminDragDropImage
 }
 
 
@@ -176,12 +177,18 @@ const pageSections = ref([
     label: 'SEO',
     type: 'seo',
     components: [
-      { icon: 'page_header', text: 'Meta Título', componentName: 'meta-title' },
-      { icon: 'add_link', text: 'Meta Link', componentName: 'meta-link', data:
+      { icon: 'page_header', text: 'Meta Título', componentName: 'meta-title',
+        data: {
+          "titulo": "Título SEO da Página de Teste"
+        }
+       },
+      {
+        icon: 'add_link', text: 'Meta Link', componentName: 'meta-link', data:
           [
             { "rel": "canonical", "href": "https://globalplastic.com.br/pagina-publica-teste" },
             { "rel": "icon", "type": "image/png", "href": "/logo_global.svg" }
-          ] },
+          ]
+      },
       {
         icon: 'edit_note', text: 'Meta Descrição', componentName: 'meta-description', data:
           [
@@ -200,7 +207,8 @@ const pageSections = ref([
           ]
       },
       {
-        icon: 'html', text: 'Atributo HTML', componentName: 'html-attrs'
+        icon: 'html', text: 'Atributo HTML', componentName: 'html-attrs',
+        data: {"lang": "pt-BR"}
       }
     ]
   },
@@ -213,10 +221,26 @@ const pageSections = ref([
         label: 'Hero',
         name: 'hero',
         items: [
-          { icon: 'page_header', text: 'Título' },
-          { icon: 'subheader', text: 'Subtítulo' },
-          { icon: 'image', text: 'Imagem' },
-          { icon: 'link', text: 'URL do botão' }
+          { icon: 'page_header', text: 'Título', componentName: 'input-text', data: {
+              label: 'Título',
+              value: 'Título de teste'
+            } 
+          },
+          { icon: 'subheader', text: 'Subtítulo', componentName: 'input-text', data: {
+              label: 'Subtítulo',
+              value: 'Subtítulo de teste'
+            }
+          },
+          { icon: 'image', text: 'Imagem', componentName: 'drag-drop-image', data: {
+              label: 'Imagem',
+              value: null
+            }
+          },
+          { icon: 'link', text: 'URL do botão', componentName: 'input-text', data: {
+              label: 'Url do botão',
+              value: '/produtos/construcao-civil/teste'
+            }
+          }
         ]
       },
       {
@@ -277,5 +301,14 @@ function closeEditor() {
   selectedComponent.value = null
 }
 
+
+function addComponentToBody() {
+  pageSections.value.find(s => s.type === 'body')?.components.push({
+    id: Date.now(),
+    label: 'Novo Componente',
+    name: 'novo_componente',
+    items: []
+  })
+}
 
 </script>

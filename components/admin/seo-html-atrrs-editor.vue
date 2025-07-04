@@ -1,11 +1,11 @@
 <template>
   <div>
-    <label>Atributos HTML (JSON)</label>
-    <textarea v-model="modelValue.attrs" rows="5" class="w-full border px-3 py-2 rounded font-mono" />
+    <label>Língua</label>
+    <input v-model="modelValue.lang" rows="5" class="w-full border px-3 py-2 rounded" />
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{ modelValue: any }>()
+defineProps<{ modelValue: { lang: string } }>()
 defineEmits(['update:modelValue'])
 </script>
